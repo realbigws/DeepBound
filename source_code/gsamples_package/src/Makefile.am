@@ -1,7 +1,7 @@
 bin_PROGRAMS=gsamples
 
-gsamples_CPPFLAGS = -pg -std=c++11 -I$(HTSLIB) -I$(BOOST_HOME) 
-gsamples_LDFLAGS = -pg -L$(HTSLIB) -pthread
+gsamples_CPPFLAGS = -std=c++11 -I$(HTSLIB) -I$(BOOST_HOME) 
+gsamples_LDFLAGS = -L$(HTSLIB) -pthread
 gsamples_LDADD = -lhts -lz
 
 gsamples_SOURCES = interval_map.h interval_map.cc \

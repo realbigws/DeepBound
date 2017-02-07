@@ -2,10 +2,10 @@
 
 if [  $# -lt  2 ]
 then
-	echo "Usage: ./oneline_command.sh <original_input> <output_folder> "
-	echo "[Note]:    <original_input> should be concatenated into one file"
-	echo "           <output_folder> shall contain output folders"
-	echo "           see README file for detail description of output folders"
+	echo "Usage: ./DeepBound.sh <ReadCount_input> <output_folder> "
+	echo "[Note]:    <ReadCount_input> should contain concatenated ReadCount files."
+	echo "           <output_folder> would contain predicted premature boundary."
+	echo "           see README file for detail description of I/O files"
 	exit 1
 fi
 
@@ -55,4 +55,7 @@ rm -f $output_folder/$relnam.bou_pred
 
 #--> remove temporary folders
 rm -rf $output_folder/cov_out/ $output_folder/abu_out/ $output_folder/abu_val/ $output_folder/feat_out/ $output_folder/bou_out/
+
+#--> concatenate all premature predictions into one file
+$bin/Fast_CAT $output_folder/${relnam}_sample_list $output_folder/bou_pred_out $output_folder/bou_pred.premature
 
