@@ -46,7 +46,9 @@ done
 # The executable file pinpoint will be present at src."
 
 cd $curdir
+echo ""
 echo "Part I: Install pinpoint "
+echo ""
 if [ ! -f "pinpoint" ]
 then
 	echo "1.1 automatic configuration"

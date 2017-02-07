@@ -12,8 +12,8 @@ echo "==========================="
 echo ""
 cd $curdir
 cd gsamples_package
-#	./install_gsamples.sh -v 0
-#	mv gsamples ../../bin
+	./install_gsamples.sh -v 0
+	mv gsamples ../../bin
 cd ../
 
 #-> 2. compile pinpoint
@@ -24,8 +24,8 @@ echo "============================"
 echo ""
 cd $curdir
 cd pinpoint_package
-#	./install_pinpoint.sh -v 0
-#	mv pinpoint ../../bin
+	./install_pinpoint.sh -v 0
+	mv pinpoint ../../bin
 cd ../
 
 #-> 3. compile DeepCNF_Pred
