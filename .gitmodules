@@ -1,0 +1,3 @@
+[submodule "source_code/DeepCNF_AUC"]
+	path = source_code/DeepCNF_AUC
+	url = https://github.com/realbigws/DeepCNF_AUC

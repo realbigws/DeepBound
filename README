@@ -75,6 +75,8 @@ Usage: ./DeepBound.sh <ReadCount_input> <output_folder>
 
 ./DeepBound.sh example/example.ReadCount test_out/
 
+
+
 #======== Section III: process premature boundary prediction by bin/pinpoint ===========#
 
 3.1 Usage of bin/pinpoint
