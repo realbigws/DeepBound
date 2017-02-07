@@ -16,7 +16,7 @@ Predict the boundary of transcript start and end from RNA-seq reads alignment, v
 
 1. download the package
 
-git clone https://github.com/realbigws/DeepBound
+git clone --recursive https://github.com/realbigws/DeepBound
 cd DeepBound/
 
 --------------
@@ -32,6 +32,7 @@ cd ../
 3. update the package
 
 git pull
+git submodule foreach --recursive git pull origin master
 
 
 

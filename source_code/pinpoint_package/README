@@ -1,7 +1,6 @@
 1, INSTALL
  Execute the following commands to generate Makefile and compile:\\
 
-	cd src
 	aclocal
 	autoconf
 	autoheader
