@@ -35,7 +35,7 @@ git pull
 
 
 
-#=================== Section I: from BAM file, generate ReadCount file by bin/gsamples ==============#
+#======== Section I: from BAM, generate ReadCount by bin/gsamples ==============#
 
 1.1 Usage of bin/gsamples
 
@@ -61,7 +61,7 @@ bin/gsamples example/example.bam example.ReadCount
 
 
 
-#=================== Section II: from ReadCount file, predict premature boundary by DeepBound.sh ==================#
+#======== Section II: predict premature boundary by DeepBound.sh ==================#
 
 2.1 Usage of DeepBound.sh
 
@@ -75,7 +75,7 @@ Usage: ./DeepBound.sh <ReadCount_input> <output_folder>
 
 ./DeepBound.sh example/example.ReadCount test_out/
 
-#=================== Section III: process premature boundary prediction by bin/pinpoint ===========#
+#======== Section III: process premature boundary prediction by bin/pinpoint ===========#
 
 3.1 Usage of bin/pinpoint
 
