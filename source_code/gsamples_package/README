@@ -1,0 +1,40 @@
+To install gsample, you need to first download/compile two software packages, 
+Samtools and Boost, setup the corresponding environmental variables, and then
+compile the source code of gsample.
+
+1, Download Samtools from {http://www.htslib.org/} with version 1.2 or higher.
+Compile it to generate the htslib file libhts.a. Set environment variable
+HTSLIB to indicate the directory of libhts.a.  For example, for Unix platforms,
+add the following statement to the file ~/.bash_profile:
+
+	export HTSLIB="/directory/to/your/htslib/htslib-1.2.1"
+
+2, Download Boost from {http://www.boost.org}. Uncompress it
+somewhere~(compiling and installing are not necessary). Set environment
+variable BOOST_HOME to indicate the directory of Boost.  For example, for Unix
+platforms, add the following statement to the file ~/.bash_profile:
+
+	export BOOST_HOME="/directory/to/your/boost/boost_1_60_0"
+
+3, Execute the following commands to generate Makefile and compile:\\
+
+	aclocal
+	autoconf
+	autoheader
+	automake -a
+	./configure
+	make
+
+The executable file gsamples will be present at src.
+
+4, COMMAND LINE
+The usage of gsamples is: ./gsamples <in-bam-file> <out-sample-file> [-f fasta-dir] [-g gtf-file] [-e min-expression]
+ The parameter <in-bam-file> specifies the input reads alignemnt file. It has to be sorted (for example, by samtools).
+ The parameter <out-sample-file> specifies the the output sample file.
+ The parameter [fasta-dir] is optional but strongly recommended, which specifies directory of all sequences files of all chromosomes. 
+ These sequence files will be used as features.
+ The parameter [gtf-file] is optional, which specifies the ground-truth expressed transcripts. If this file is given, the true boundaries
+ will be contained in the output sample file as true labels; otherwise, the true labels will be -1. When evaluting mode is on (i.e., to
+ evalute the performance of this method, this file should be given.
+ The parameter [min-expression] is together with [-g gtf-file], which will make gsamples ignore these transcripts in the gtf-file with
+ expression abundance under this value.

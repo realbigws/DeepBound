@@ -1,0 +1,5 @@
+*.o
+sgraph
+Makefile
+Makefile.in
+*.Po

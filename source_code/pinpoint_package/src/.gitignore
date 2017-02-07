@@ -1,0 +1,5 @@
+*.o
+pinpoint
+Makefile
+Makefile.in
+*.Po
