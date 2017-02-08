@@ -3,6 +3,7 @@
 
 #include "position.h"
 #include "block.h"
+#include <fstream>
 #include <vector>
 
 using namespace std;
@@ -10,6 +11,7 @@ using namespace std;
 class sample
 {
 public:
+	string header;
 	vector<position> positions;
 
 	vector<block> blocks0;
@@ -37,6 +39,7 @@ public:
 	int process();
 	int print(int index);
 	int print_result(int index);
+	int write(ofstream &fout);
 
 private:
 	int qualify();

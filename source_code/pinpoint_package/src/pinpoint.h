@@ -11,12 +11,13 @@ using namespace std;
 class pinpoint
 {
 public:
-	pinpoint(const string &sample_file, const string &pred_file);
+	pinpoint(const string &sample_file, const string &pred_file, const string &output_file);
 	~pinpoint();
 
 public:
 	ifstream fsmp;
 	ifstream fprd;
+	ofstream fout;
 
 	sample sp;
 	int index;

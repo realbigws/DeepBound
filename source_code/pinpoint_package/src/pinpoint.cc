@@ -9,10 +9,11 @@
 
 using namespace std;
 
-pinpoint::pinpoint(const string &sample_file, const string &pred_file)
+pinpoint::pinpoint(const string &sample_file, const string &pred_file, const string &output_file)
 {
 	fsmp.open(sample_file.c_str());
 	fprd.open(pred_file.c_str());
+	fout.open(output_file.c_str());
 
 	correct0 = 0;
 	correct1 = 0;
@@ -34,6 +35,7 @@ pinpoint::~pinpoint()
 {
 	fprd.close();
 	fsmp.close();
+	fout.close();
 }
 
 int pinpoint::load_prediction()
@@ -57,6 +59,8 @@ int pinpoint::load_sample()
 	{
 		if(line.size() == 0) continue;
 		if(line[0] != '#') continue;
+
+		sp.header = line;
 
 		// true label
 		int k = 0;
@@ -113,7 +117,8 @@ bool pinpoint::process()
 		return true;
 	}
 
-	sp.print_result(index++);
+	//sp.print_result(index++);
+	sp.write(fout);
 
 	correct0 += sp.correct0;
 	correct1 += sp.correct1;

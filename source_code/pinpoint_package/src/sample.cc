@@ -46,9 +46,9 @@ int sample::process()
 int sample::qualify()
 {
 	accept = true;
-	if(label0 == 0 && label2 == 0) accept = false;
+	return 0;
 
-	if(accept == false) return 0;
+	if(label0 == 0 && label2 == 0) accept = false;
 
 	for(int i = 0; i < positions.size(); i++)
 	{
@@ -289,8 +289,39 @@ int sample::print_result(int index)
 		printf("sample %d: start boundary at position %d\n", index, p);
 	}
 
-	printf("sample %d: summary end boundaries = %d / %d / %d\n", index, correct0, predict0, label0); 
-	printf("sample %d: summary start boundaries = %d / %d / %d\n", index, correct2, predict2, label2); 
+	//printf("sample %d: summary end boundaries = %d / %d / %d\n", index, correct0, predict0, label0); 
+	//printf("sample %d: summary start boundaries = %d / %d / %d\n", index, correct2, predict2, label2); 
+
+	return 0;
+}
+
+int sample::write(ofstream &fout)
+{
+	set<int> s0;
+	set<int> s2;
+	for(int i = 0; i < blocks0.size(); i++)
+	{
+		int p = blocks0[i].pos;
+		s0.insert(p);
+	}
+
+	for(int i = 0; i < blocks2.size(); i++)
+	{
+		int p = blocks2[i].pos;
+		s2.insert(p);
+	}
+
+	fout << header.c_str() << endl;
+	for(int i = 0; i < positions.size(); i++)
+	{
+		if(s0.find(i) != s0.end()) fout << "0 ";
+		else if(s2.find(i) != s2.end()) fout << "2 ";
+		else fout << "1 ";
+	}
+	fout << endl;
+
+	//printf("sample %d: summary end boundaries = %d / %d / %d\n", index, correct0, predict0, label0); 
+	//printf("sample %d: summary start boundaries = %d / %d / %d\n", index, correct2, predict2, label2); 
 
 	return 0;
 }

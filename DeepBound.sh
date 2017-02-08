@@ -57,5 +57,5 @@ rm -f $output_folder/$relnam.bou_pred
 rm -rf $output_folder/cov_out/ $output_folder/abu_out/ $output_folder/abu_val/ $output_folder/feat_out/ $output_folder/bou_out/
 
 #--> concatenate all premature predictions into one file
-$bin/Fast_CAT $output_folder/${relnam}_sample_list $output_folder/bou_pred_out $output_folder/bou_pred.premature
+$bin/Fast_CAT $output_folder/${relnam}_sample_list $output_folder/bou_pred_out $output_folder/$relnam.premature
 

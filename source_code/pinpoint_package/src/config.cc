@@ -3,7 +3,7 @@
 #include <cstdlib>
 
 int block_size = 10;
-double min_prob = 0.90;
+double min_prob = 0.6;
 int block_size1 = 10;
 double min_prob1 = 0.90;
 int max_correct_distance = 100;
