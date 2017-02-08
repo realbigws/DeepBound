@@ -3,7 +3,7 @@
 # ----- usage ------ #
 usage()
 {
-	echo "DeepBound_Package v0.01 [Feb-10-2017] "
+	echo "DeepBound_Package v0.1 [Feb-10-2017] "
 	echo "    Accurate Identification of Transcript Boundaries via Deep Convolutional Neural Fields (DeepCNF)"
 	echo ""
 	echo "USAGE: ./oneline_command.sh <-i input_BAM_file> [-o output_boundary] "
