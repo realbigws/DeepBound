@@ -3,7 +3,7 @@
 	url = https://github.com/realbigws/DeepCNF_AUC
 [submodule "source_code/pinpoint_package"]
 	path = source_code/pinpoint_package
-	url = https://github.com/shaomingfu/pinpoint_package
+	url = https://github.com/shaomingfu/pinpoint
 [submodule "source_code/gsamples_package"]
 	path = source_code/gsamples_package
-	url = https://github.com/shaomingfu/gsamples_package
+	url = https://github.com/shaomingfu/gsamples
