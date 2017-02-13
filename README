@@ -169,7 +169,7 @@ each sequence consists of 23 rows.
         If for training purpose, then MUST set 0,1,2 for END, MID, and START, respectively.
 
 3. the second row below '#' header records the positive abundance value.
-        If real-world data is applied, then just put any number here (e.g., -1);
+        If real-world data is applied, then just put any number here (e.g., 0);
         If for training purpose, then MUST put a real positive value here to indicate the abundance value.
 
 4. each data entry should have 23 lines in total, including the '#' header row, first boundary label row, and second abundance value row.
